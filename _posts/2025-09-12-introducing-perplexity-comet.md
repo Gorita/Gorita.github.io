@@ -1,6 +1,6 @@
 ---
 title: "퍼플렉시티 코맷(Comet): 단순한 브라우저를 넘어 '지능형 웹 비서'로"
-date: 2025-09-12
+date: 2025-09-12 00:00:00 +0900
 categories: [IT, AI]
 tags: [브라우저, perplexity, comet]
 ---

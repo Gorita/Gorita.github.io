@@ -1,6 +1,6 @@
 ---
 title: "옵시디언 링크 동작은 어떻게 하는걸까?"
-date: 2025-09-16 10:00:00
+date: 2025-09-16 10:00:00 +0900
 categories: [IT, tech]
 tags: [옵시디언, Obsidian, 링크, 인덱싱, 백링크]
 mermaid: true
