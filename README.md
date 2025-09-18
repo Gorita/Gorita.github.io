@@ -1,43 +1,44 @@
-# Chirpy Starter
+# gorita-blog 프로젝트 요약
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+이 문서는 `gorita-blog` 프로젝트의 구조와 사용법을 요약합니다.
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+## 프로젝트 구조
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+- **`_config.yml`**: 블로그의 주요 설정을 담고 있는 파일입니다. (블로그 제목, 저자, URL 등)
+- **`_posts`**: 블로그 게시물이 저장되는 폴더입니다. `YYYY-MM-DD-제목.md` 형식의 마크다운 파일로 게시물을 작성합니다.
+- **`_tabs`**: 'About', 'Archives' 등 상단 탭 페이지의 내용을 담고 있습니다.
+- **`assets`**: 이미지, CSS, JavaScript 등 블로그의 정적 파일들이 위치합니다. 프로필 이미지 등은 `assets/img/` 폴더에 있습니다.
+- **`tools/run.sh`**: 로컬에서 블로그를 실행하기 위한 스크립트입니다.
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+## 사용 방법
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+### 로컬에서 블로그 실행하기
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+1.  터미널에서 `gorita-blog` 폴더로 이동합니다.
+    ```bash
+    cd gorita-blog
+    ```
+2.  아래 명령어를 실행하여 로컬 서버를 시작합니다.
+    ```bash
+    bash tools/run.sh &
+    ```
+3.  웹 브라우저에서 `http://127.0.0.1:4000` 주소로 접속하여 블로그를 확인할 수 있습니다.
 
-## Usage
+### 새로운 글 작성하기
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+1.  `_posts` 폴더 안에 `YYYY-MM-DD-글-제목.md` 형식으로 새 마크다운 파일을 생성합니다.
+2.  파일 상단에 아래와 같은 형식으로 메타데이터(Front Matter)를 추가합니다.
+    ```yaml
+    ---
+    title: "글 제목"
+    date: YYYY-MM-DD HH:MM:SS +0900
+    categories: [카테고리1, 카테고리2]
+    tags: [태그1, 태그2]
+    ---
 
-## Contributing
+    여기에 글 내용을 작성합니다.
+    ```
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+### 블로그 배포
 
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+이 블로그는 GitHub Actions를 통해 `https://gorita.github.io`에 자동으로 배포되도록 설정되어 있습니다. `main` 브랜치에 변경사항을 푸시하면 잠시 후 사이트에 반영됩니다.
