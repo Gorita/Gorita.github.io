@@ -42,3 +42,7 @@
 ### 블로그 배포
 
 이 블로그는 GitHub Actions를 통해 `https://gorita.github.io`에 자동으로 배포되도록 설정되어 있습니다. `main` 브랜치에 변경사항을 푸시하면 잠시 후 사이트에 반영됩니다.
+
+## Google Analytics 설정
+
+Google Analytics ID를 `_config.yml` 파일에 설정하여 블로그 방문자 및 게시물 조회수를 추적하도록 구성되었습니다.
