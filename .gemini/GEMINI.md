@@ -18,8 +18,18 @@
 # 워크플로우 가이드
 
 ## 1. 로컬 실행
+Ruby 환경(rbenv)을 사용하여 실행하는 것을 권장합니다.
+
+**Gemini CLI 백그라운드 실행 (유지됨):**
 ```bash
-bash tools/run.sh &
+export PATH="$HOME/.rbenv/shims:$PATH"
+nohup bundle exec jekyll serve --host 127.0.0.1 > jekyll.log 2>&1 &
+```
+*로그 확인: `tail -f jekyll.log`*
+
+**사용자 직접 실행 (별도 터미널):**
+```bash
+bundle exec jekyll serve --livereload
 ```
 서버 주소: `http://127.0.0.1:4000`
 
